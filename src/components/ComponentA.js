@@ -30,6 +30,7 @@ console.log(data)
         </div>
 
         </div>
-    
+    );
+    };
 
 export default ComponentA;
