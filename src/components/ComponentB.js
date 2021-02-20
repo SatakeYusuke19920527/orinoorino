@@ -26,6 +26,7 @@ const ComponentB = () => {
         <Link to="./">ComponentAへ移動</Link>
         <Link to="componentc">ComponentCへ移動</Link>
 
+<div>
         <Table striped bordered hover>
   <thead>
     <tr>
@@ -47,6 +48,8 @@ const ComponentB = () => {
 }
   </tbody>
 </Table>
+</div>
+
         </div>
     );
 };
