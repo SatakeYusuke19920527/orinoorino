@@ -12,24 +12,20 @@ const ComponentC = () => {
         console.log('useEffect が呼び出されました。');
       }, [count]);
 
-    axios.get('http://jsonplaceholder.typicode.com/posts')
-    .then(res => {
-      console.log(res,'res check')
-      setData(res.data)
-    })
-
     console.log(data)
 
-    const handleclick = () => {
-        
-    }
+    const handleclick = () => { 
+    axios.get('http://jsonplaceholder.typicode.com/posts')
+    .then(res => {
+      setData(res.data)  
+      })}
 
     return (
         <div>
         <div>ComponentC</div>
         <Link to="./">ComponentAへ移動</Link>
         <Link to="componentb">ComponentBへ移動</Link>
-        <Button onClick={handleclick}></Button>
+        <Button onClick={handleclick}>押せ</Button>
 
         <Table striped bordered hover>
   <thead>
@@ -42,7 +38,7 @@ const ComponentC = () => {
   </thead>
   <tbody>
 {data.map(d => 
-    <tr>
+    <tr key={d.id}>
         <td>{d.userId}</td>
         <td>{d.id}</td>
         <td>{d.title}</td>
@@ -54,7 +50,9 @@ const ComponentC = () => {
 </Table>
 
         </div>
+        
     );
 };
+
 
 export default ComponentC;
